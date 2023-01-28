@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
-const Camera = () => {
+function Camera() {
   const videoRef = useRef(null);
   const [permission, setPermission] = useState(null);
 
   useEffect(() => {
-    navigator.permissions.query({ name: "camera" }).then((permissionStatus) => {
+    navigator.permissions.query({ name: 'camera' }).then((permissionStatus) => {
       setPermission(permissionStatus.state);
     });
 
@@ -21,13 +21,13 @@ const Camera = () => {
 
   return (
     <div>
-      {permission === "granted" ? (
+      {permission === 'granted' ? (
         <video ref={videoRef} id="videoElement" />
       ) : (
         <h2>Camera permission denied</h2>
       )}
     </div>
   );
-};
+}
 
 export default Camera;

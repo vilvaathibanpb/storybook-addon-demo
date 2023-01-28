@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import Camera from "./Camera";
+import Camera from './Camera';
 
 export default {
-    title: 'User Permission/Camera',
-    Component: Camera,
-    parameters: {
-        requiredPermission: 'camera'
-    }
-}
+  title: 'User Permission/Camera',
+  Component: Camera,
+  parameters: {
+    requiredPermission: 'camera',
+  },
+};
 
-export const CameraDefault = () => <Camera />
+export function CameraDefault() {
+  return <Camera />;
+}
